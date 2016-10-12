@@ -8,15 +8,17 @@ public class ModelGamePanel {
     private Image background;
     private Image popcorn;
     private Image basket;
-    private int score;
+    private Image bomb;
+
 
     public ModelGamePanel() {
         background = Toolkit.getDefaultToolkit().getImage(ImageConstants.BACKGROUND);
         popcorn = Toolkit.getDefaultToolkit().getImage(ImageConstants.POPCORN);
         basket = Toolkit.getDefaultToolkit().getImage(ImageConstants.BASKET);
-        score = 0;
+        bomb = Toolkit.getDefaultToolkit().getImage(ImageConstants.BOMB);
 
     }
+
 
     public Image getBackground() {
         return background;
@@ -29,12 +31,7 @@ public class ModelGamePanel {
     public Image getBasket() {
         return basket;
     }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
+    public Image getBomb() {
+        return bomb;
     }
 }

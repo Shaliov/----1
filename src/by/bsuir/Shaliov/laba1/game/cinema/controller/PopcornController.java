@@ -9,5 +9,6 @@ public class PopcornController {
 
     public void movePopcorn(ModelPopcorn popcorn) {
         popcorn.setY(popcorn.getY() + popcorn.getDy());
+
     }
 }

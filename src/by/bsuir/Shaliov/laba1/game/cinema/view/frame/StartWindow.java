@@ -1,7 +1,6 @@
 package by.bsuir.Shaliov.laba1.game.cinema.view.frame;
 
 import by.bsuir.Shaliov.laba1.game.cinema.constants.WordConstants;
-import by.bsuir.Shaliov.laba1.game.cinema.model.ModelBasket;
 import by.bsuir.Shaliov.laba1.game.cinema.view.panel.Background;
 import by.bsuir.Shaliov.laba1.game.cinema.view.panel.GamePanel;
 
@@ -41,12 +40,20 @@ public class StartWindow extends JFrame {
 
     private void startExit(Box boxPanel) {
         Box okBox = Box.createHorizontalBox();
+        String [] items = {
+                WordConstants.LEVEL1,
+                WordConstants.LEVEL2,
+                WordConstants.LEVEL3,
+                WordConstants.LEVEL4
+        };
+        JComboBox comboBox = new JComboBox(items);
+        comboBox.setEditable(false);
         JButton start = new JButton(WordConstants.START);
         start.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 background.setVisible(false);
-                gamePanel = new GamePanel(startWindow.getWidth(), startWindow.getHeight());
+                gamePanel = new GamePanel(startWindow.getWidth(), startWindow.getHeight(),(comboBox.getSelectedIndex()+1)*1000 /((comboBox.getSelectedIndex()+1)*(comboBox.getSelectedIndex()+1)));
                 startWindow.add(gamePanel);
                 gamePanel.setVisible(true);
             }
@@ -59,6 +66,7 @@ public class StartWindow extends JFrame {
             }
         });
 
+
         okBox.add(Box.createHorizontalGlue());
         okBox.add(start);
         okBox.add(Box.createHorizontalStrut(12));
@@ -66,5 +74,6 @@ public class StartWindow extends JFrame {
         boxPanel.add(okBox);
         boxPanel.add(Box.createVerticalStrut(12));
         boxPanel.add(Box.createHorizontalStrut(24));
+        boxPanel.add(comboBox);
     }
 }

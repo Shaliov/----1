@@ -8,10 +8,6 @@ import java.awt.*;
 public class Background extends JPanel {
     private Background background = this;
 
-    public Background getBackGround() {
-        return background;
-    }
-
     public Background() {
     }
 
@@ -23,5 +19,8 @@ public class Background extends JPanel {
             g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
         }
         repaint();
+    }
+    public Background getBackGround() {
+        return background;
     }
 }
